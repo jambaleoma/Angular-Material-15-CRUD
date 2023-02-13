@@ -1,0 +1,25 @@
+<h1>Angular Material 15</h1>
+<h3>Simple CRUD with Reactive Forms</h3>
+
+<!-- Add List -->
+<button mat-button (click)="openModalAddUser()">
+  <mat-icon fontIcon="add"></mat-icon> Add New User
+</button>
+<hr />
+<!-- user list -->
+<mat-list>
+  <mat-list-item *ngFor="let user of users">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center;"
+    >
+      <div>
+        <div matListItemTitle>{{ user.name }}</div>
+        <div matListItemLine>{{ user.email }}</div>
+      </div>
+      <div>
+        <mat-icon (click)="openModalEditUser(user)" fontIcon="edit"></mat-icon>
+        <mat-icon (click)="deleteHandler(user.id)" fontIcon="delete"></mat-icon>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>
